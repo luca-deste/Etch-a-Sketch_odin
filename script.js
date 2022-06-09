@@ -16,9 +16,21 @@ function filling(winArea){
         let drawer = document.createElement('div');
         drawer.style.width='16px';
         drawer.style.height='16px';
-        drawer.style.backgroundColor='black';
+        drawer.style.backgroundColor='white';
+        drawer.style.border='0.5px solid #F0F0F0';
+        drawer.classList.add('drawSurface');
         container.appendChild(drawer);
     }
 }
 
 filling(calculateArea());
+
+const drawSurface = document.querySelectorAll('.drawSurface');
+console.log(drawSurface[0]);
+
+drawSurface.forEach(element => {
+    console.log('hover');
+    element.addEventListener('mouseover',e => {
+        e.target.style.backgroundColor='black';
+    });
+ });
