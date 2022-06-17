@@ -10,7 +10,6 @@ let pixelSize = 16;
 pixelLabel.innerText =`Pixel Size : ${pixelSize}`
 pixelInput.value = pixelSize;
 pixelInput.onchange = function(){
-    console.log(this.value)
     pixelSize = this.value;
     pixelLabel.innerText =`Pixel Size : ${pixelSize}`
     createGrid(pixelSize);
@@ -41,7 +40,8 @@ window.addEventListener('resize',e=>{
 function createGrid(pxl){
     container.innerHTML = '';
     let width = vw(50);
-    let square = Math.floor(width/pixelSize)-2;
+    let square = (width/pixelSize)-2;
+    console.log(square)
     for(let i=0;i<pxl*pxl;i++){
         let drawable = document.createElement('div');
         drawable.style.border='1px solid #F0F0F0';
