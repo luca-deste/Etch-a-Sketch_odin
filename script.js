@@ -2,6 +2,9 @@ const container = document.getElementById('container');
 const pixelLabel = document.getElementById('pixelLabel');
 const pixelInput = document.getElementById('pixelSize');
 const ColorInput = document.getElementById('color');
+const clearBtn = document.getElementById('clearBtn');
+const rgbBtn = document.getElementById('rgbBtn');
+let rgbMode = 0;
 let color = ColorInput.value;
 let pixelSize = 16;
 pixelLabel.innerText =`Pixel Size : ${pixelSize}`
@@ -15,7 +18,17 @@ pixelInput.onchange = function(){
 ColorInput.onchange = function(){
     color = this.value;
 }
-
+clearBtn.onclick = function(){
+    createGrid(pixelSize);
+}
+rgbBtn.onclick = function(){
+    if(rgbMode){
+        rgbMode--;
+    } else {
+        rgbMode++;
+    }
+    console.log(rgbMode)
+}
 function vw(v) {
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     return (v * w) / 100;
@@ -37,6 +50,10 @@ function createGrid(pxl){
         drawable.classList.add('hover');
         drawable.addEventListener('mouseover',e => {
             if(e.buttons == 1 || e.buttons == 3){
+                if(rgbMode){
+                    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+                    color = `#${randomColor}`
+                }
                 drawable.style.backgroundColor=color;
             }
         })

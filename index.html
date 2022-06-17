@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <title>Etch-A-Sketch</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1 id="title">Etch a Sketch</h1>
+    <p id="description">For you, to draw the things that you like.</p>
+    <p id="tip"><u>TIP: Try the rgb button, for a colorful experience.</u></p>
     <div class="topDiv">
-    <div class="colorPicker">
+    <div class="leftDiv">
+        <button class="rgbBtn" id="rgbBtn"><span class="rgbPush">RGB</span></button>
+        <button class="clearBtn" id="clearBtn"><span class="push">CLEAR</span></button>
         <input type="color" name="Color" id="color" value="#484848">
     </div>
     <div class="rightDiv">

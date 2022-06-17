@@ -2,15 +2,28 @@
     box-sizing: border-box;
   }*/
 
-
+#title{
+    text-align: center;
+    margin: 20px auto;
+    font-size: 45px;
+    font-family: 'Sniglet', cursive;}
+#description{
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Dancing Script', cursive;}
+#tip{
+        text-align: center;
+        font-size: 25px;
+        font-family: 'Dancing Script', cursive;}
 #container{
     display: flex;
     flex-wrap: wrap;
     margin: auto auto 20px auto;
     width: 50vw;
     height: 50vw;
-    border: 5px solid red;
+    border: 5px solid #0048ce;
     justify-content: space-between;
+    box-shadow: 2px 1px rgba(0, 0, 0, 0.555);
 }
 .hover{
     text-align: center;
@@ -35,7 +48,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%; 
-    background: #ff0000;
+    background: #0048ce;
     cursor: pointer;
   }
 .topDiv{
@@ -48,9 +61,12 @@
     display: flex;
     flex-direction: column;
 }
-.colorPicker{
+.leftDiv{
+    display: flex;
+    flex-direction: column;
     align-self: center;
     text-align: center;
+    gap: 30px;
 }
 #color{
     -webkit-appearance: none;
@@ -61,6 +77,7 @@
     cursor: pointer;
     width: 70px;
     height: 70px;
+    
 }
 #color::-moz-color-swatch{
     border-radius: 50%;
@@ -68,5 +85,62 @@
 }
 #color::-webkit-color-swatch{
     border-radius: 50%;
-    border: 3px solid black;
+    border: 3px solid #0048ce;
+}
+.clearBtn{
+    box-sizing: border-box;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    background-color: #00256b;
+    border: none;
+    padding: 0px;
+    /*color: whitesmoke;*/
+    cursor: pointer;
+    outline-offset: 4px;
+}
+.push{
+    box-sizing: border-box;
+    display: block;
+    border-radius: 50%;
+    padding: 22px 10px;
+    height: 70px;
+    width: 70px;
+    background-color: #337aff;
+    border: 3px solid #0048ce;
+    color: whitesmoke;
+    transform: translateY(-3px);
+    font-family: 'Sniglet', cursive;}
+
+.clearBtn:active .push{
+    transform: translateY(-1px);
+}
+
+.rgbBtn{
+    box-sizing: border-box;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    background-color: #00256b;
+    border: none;
+    padding: 0px;
+    /*color: whitesmoke;*/
+    cursor: pointer;
+    outline-offset: 4px;
+}
+.rgbPush{
+    box-sizing: border-box;
+    display: block;
+    border-radius: 50%;
+    padding: 22px 10px;
+    height: 70px;
+    width: 70px;
+    background-color: #337aff;
+    border: 3px solid #0048ce;
+    color: whitesmoke;
+    transform: translateY(-3px);
+    font-family: 'Sniglet', cursive;}
+
+.rgbBtn:active .rgbPush{
+    transform: translateY(-1px);
 }
