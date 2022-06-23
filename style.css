@@ -144,3 +144,58 @@
 .rgbBtn:active .rgbPush{
     transform: translateY(-1px);
 }
+.shadow{
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shadowPlusBtn, .shadowMinusBtn{
+    box-sizing: border-box;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: #00256b;
+    border: none;
+    padding: 0px;
+    /*color: whitesmoke;*/
+    cursor: pointer;
+    outline-offset: 4px;
+}
+
+.shadowMinusPush{
+    box-sizing: border-box;
+    display: block;
+    border-radius: 50%;
+    padding: 10px 10px;
+    height: 40px;
+    width: 40px;
+    background-color: #7dabff;
+    border: 3px solid #0048ce;
+    color: whitesmoke;
+    transform: translateY(-3px);
+    font-family: 'Sniglet', cursive;
+}
+
+.shadowPlusPush{
+    box-sizing: border-box;
+    display: block;
+    border-radius: 50%;
+    padding: 10px 10px;
+    height: 40px;
+    width: 40px;
+    background-color: #1165ff;
+    border: 3px solid #0048ce;
+    color: whitesmoke;
+    transform: translateY(-3px);
+    font-family: 'Sniglet', cursive;
+}
+
+.shadowPlusBtn:active .shadowPlusPush, .shadowMinusBtn:active .shadowMinusPush {
+    transform: translateY(-1px);
+}
+
+#opacity{
+    font-family: 'Sniglet', cursive;
+}
