@@ -6,10 +6,13 @@ const clearBtn = document.getElementById('clearBtn');
 const rgbBtn = document.getElementById('rgbBtn');
 const opBtnPlus = document.getElementById('shadowPlusBtn');
 const opBtnMinus = document.getElementById('shadowMinusBtn');
+const contSpan = document.getElementById('contSpan');
+const contBorder = document.getElementById('contBorder');
 let rgbMode = 0;
 let color = ColorInput.value;
 let pixelSize = 16;
 let opacity = 1;
+
 
 opBtnPlus.onclick = function(){
     console.log('opBtnPlus');
@@ -43,12 +46,20 @@ ColorInput.onchange = function(){
 }
 clearBtn.onclick = function(){
     createGrid(pixelSize);
+    opacity = 1;
 }
 rgbBtn.onclick = function(){
     if(rgbMode){
         rgbMode--;
+        contSpan.classList.toggle('contSpan');
+        contBorder.classList.toggle('contNormalBorder');
+        contBorder.classList.toggle('contRgbBorder');
+        ColorInput.value = color;
     } else {
         rgbMode++;
+        contSpan.classList.toggle('contSpan');
+        contBorder.classList.toggle('contNormalBorder');
+        contBorder.classList.toggle('contRgbBorder');
     }
     console.log(rgbMode)
 }
@@ -72,11 +83,13 @@ function createGrid(pxl){
         drawable.style.width=`${square}px`;
         drawable.style.height=`${square}px`;
         drawable.classList.add('hover');
+        drawable.style.zIndex = 11;
+        drawable.style.backgroundColor='white';
         drawable.addEventListener('mouseover',e => {
             if(e.buttons == 1 || e.buttons == 3){
                 if(rgbMode){
                     let randomColor = Math.floor(Math.random()*16777215).toString(16);
-                    color = `#${randomColor}`
+                    color = `#${randomColor}`;
                 }
                 drawable.style.opacity=opacity;
                 drawable.style.backgroundColor=color;
