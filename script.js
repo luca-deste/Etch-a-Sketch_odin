@@ -12,6 +12,7 @@ let rgbMode = 0;
 let color = ColorInput.value;
 let pixelSize = 16;
 let opacity = 1;
+let colorState = ColorInput.value;
 
 
 opBtnPlus.onclick = function(){
@@ -54,8 +55,11 @@ rgbBtn.onclick = function(){
         contSpan.classList.toggle('contSpan');
         contBorder.classList.toggle('contNormalBorder');
         contBorder.classList.toggle('contRgbBorder');
-        ColorInput.value = color;
+        ColorInput.value = colorState;
+        color = colorState;
     } else {
+        colorState = ColorInput.value;
+        console.log(colorState);
         rgbMode++;
         contSpan.classList.toggle('contSpan');
         contBorder.classList.toggle('contNormalBorder');
@@ -75,7 +79,7 @@ window.addEventListener('resize',e=>{
 
 function createGrid(pxl){
     container.innerHTML = '';
-    let width = vw(50);
+    let width = vw(40);
     let square = (width/pixelSize)-2;
     for(let i=0;i<pxl*pxl;i++){
         let drawable = document.createElement('div');

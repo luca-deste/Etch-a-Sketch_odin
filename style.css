@@ -16,8 +16,8 @@
         font-size: 25px;
         font-family: 'Dancing Script', cursive;}
 #contBorder{
-    width: 51vw;
-    height: 51vw;
+    width: 41vw;
+    height: 41vw;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -49,8 +49,8 @@
 
 #contBorder span{
     position: absolute;
-    height: 51vw;
-    width: 51vw;
+    height: 41vw;
+    width: 41vw;
 }
 
 .contSpan:nth-child(1) {
@@ -66,8 +66,8 @@
     display: flex;
     flex-wrap: wrap;
     margin: auto auto auto auto;
-    width: 50vw;
-    height: 50vw;
+    width: 40vw;
+    height: 40vw;
     /*border: 5px solid #0048ce;*/
     justify-content: space-between;
     z-index: 9;
